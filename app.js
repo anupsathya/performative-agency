@@ -7,11 +7,86 @@ const https = require('https');
 const nodeCron = require("node-cron");
 require('dotenv').config();
 
+let dummy = {
+    "performative": [{
+        "prompt": "This is the first prompt",
+        "option1": "This is the first option",
+        "option2": "This is the second option",
+        "option3": "This is the third option",
+        "votes1": 0,
+        "votes2": 0,
+        "votes3": 0       
+    },
+    {
+        "prompt": "This is the 2nd prompt",
+        "option1": "This is the first option",
+        "option2": "This is the second option",
+        "option3": "This is the third option",
+        "votes1": 0,
+        "votes2": 0,
+        "votes3": 0       
+    },
+    {
+        "prompt": "This is the 3rd prompt",
+        "option1": "This is the first option",
+        "option2": "This is the second option",
+        "option3": "This is the third option",
+        "votes1": 0,
+        "votes2": 0,
+        "votes3": 0       
+    },
+    {
+        "prompt": "This is the 4th prompt",
+        "option1": "This is the first option",
+        "option2": "This is the second option",
+        "option3": "This is the third option",
+        "votes1": 0,
+        "votes2": 0,
+        "votes3": 0       
+    },
+    {
+        "prompt": "This is the 5th prompt",
+        "option1": "This is the first option",
+        "option2": "This is the second option",
+        "option3": "This is the third option",
+        "votes1": 0,
+        "votes2": 0,
+        "votes3": 0       
+    },
+    {
+        "prompt": "This is the 6th prompt",
+        "option1": "This is the first option",
+        "option2": "This is the second option",
+        "option3": "This is the third option",
+        "votes1": 0,
+        "votes2": 0,
+        "votes3": 0       
+    },
+    {
+        "prompt": "This is the 7th prompt",
+        "option1": "This is the first option",
+        "option2": "This is the second option",
+        "option3": "This is the third option",
+        "votes1": 0,
+        "votes2": 0,
+        "votes3": 0       
+    },
+    {
+        "prompt": "This is the 8th prompt",
+        "option1": "This is the first option",
+        "option2": "This is the second option",
+        "option3": "This is the third option",
+        "votes1": 0,
+        "votes2": 0,
+        "votes3": 0       
+    }]
+}
+
 app.get('/dummy', (req, res1) => {
     /*
     localhost:3000/
     */
-    res1.send("This endpoint is working");
+    res1.send(dummy);
 });
 
 app.get('/all', (req, res1) => {
@@ -35,4 +110,8 @@ app.listen(port, () => console.log(`Server running on port ${port}`));
 //     retrieveSuccess(uid, res, req);    
 //     // console.log(JSON.stringify(jin_raw));
 // });
+
+function dummyGenerator(obj) {
+
+}
 
