@@ -103,7 +103,7 @@ app.get('/dummyreset', (req, res1) => {
     /*
     localhost:3000/all
     */
-    var dummyOut = JSON.parse(JSON.stringify(dummyIn));
+    dummyOut = JSON.parse(JSON.stringify(dummyIn));
     res1.end();
 });
 
