@@ -88,8 +88,8 @@ app.get('/dummy', (req, res1) => {
     /*
     localhost:3000/
     */
-    dummyGenerator();
     res1.send(dummyOut);
+    dummyGenerator();
 });
 
 app.get('/all', (req, res1) => {
