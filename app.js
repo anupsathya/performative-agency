@@ -18,7 +18,6 @@ app.get('/all', (req, res1) => {
     /*
     localhost:3000/all
     */
-    updateAll();
     res1.end();
 });
 
