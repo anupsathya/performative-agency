@@ -22,7 +22,7 @@ app.get('/all', (req, res1) => {
 });
 
 // By default the app runs at 3000 unless specified differently in the .env file
-const port = process.env.PORT || 8000;
+const port = 8000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
