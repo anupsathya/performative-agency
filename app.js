@@ -99,6 +99,14 @@ app.get('/all', (req, res1) => {
     res1.end();
 });
 
+app.get('/dummyreset', (req, res1) => {
+    /*
+    localhost:3000/all
+    */
+    var dummyOut = JSON.parse(JSON.stringify(dummyIn));
+    res1.end();
+});
+
 // By default the app runs at 3000 unless specified differently in the .env file
 const port = 8000;
 
