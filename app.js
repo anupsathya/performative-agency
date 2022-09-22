@@ -7,7 +7,7 @@ const https = require('https');
 const nodeCron = require("node-cron");
 require('dotenv').config();
 
-let dummy = {
+let dummyIn = {
     "performative": [{
         "prompt": "This is the first prompt",
         "option1": "This is the first option",
@@ -82,11 +82,13 @@ let dummy = {
     }]
 }
 
+var dummyOut = JSON.parse(JSON.stringify(dummyIn));
+
 app.get('/dummy', (req, res1) => {
     /*
     localhost:3000/
     */
-    res1.send(dummy);
+    res1.send(dummyOut);
 });
 
 app.get('/all', (req, res1) => {
@@ -112,6 +114,6 @@ app.listen(port, () => console.log(`Server running on port ${port}`));
 // });
 
 function dummyGenerator(obj) {
-
+    dummyOut.performative[0].votes1 += 1;
 }
 
