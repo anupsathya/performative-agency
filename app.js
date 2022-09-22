@@ -88,6 +88,7 @@ app.get('/dummy', (req, res1) => {
     /*
     localhost:3000/
     */
+    dummyGenerator();
     res1.send(dummyOut);
 });
 
@@ -113,7 +114,7 @@ app.listen(port, () => console.log(`Server running on port ${port}`));
 //     // console.log(JSON.stringify(jin_raw));
 // });
 
-function dummyGenerator(obj) {
+function dummyGenerator() {
     dummyOut.performative[0].votes1 += 1;
 }
 
