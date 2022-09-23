@@ -83,6 +83,8 @@ let dummyIn = {
 }
 
 var dummyOut = JSON.parse(JSON.stringify(dummyIn));
+var dummyCounter = 0;
+var promptCounter = 0;
 
 app.get('/dummy', (req, res1) => {
     /*
@@ -90,6 +92,7 @@ app.get('/dummy', (req, res1) => {
     */
     res1.send(dummyOut);
     dummyGenerator();
+    dummyCounter += 1;
 });
 
 app.get('/all', (req, res1) => {
@@ -103,8 +106,8 @@ app.get('/dummyreset', (req, res1) => {
     /*
     localhost:3000/all
     */
-    dummyOut = JSON.parse(JSON.stringify(dummyIn));
-    res1.end();
+    dummyReset();
+    res1.send("The dummy JSON has been reset.");
 });
 
 // By default the app runs at 3000 unless specified differently in the .env file
@@ -123,6 +126,20 @@ app.listen(port, () => console.log(`Server running on port ${port}`));
 // });
 
 function dummyGenerator() {
-    dummyOut.performative[0].votes1 += 1;
+    dummyOut.performative[promptCounter].votes1 += Math.floor(Math.random() * 4);
+    dummyOut.performative[promptCounter].votes2 += Math.floor(Math.random() * 4);
+    dummyOut.performative[promptCounter].votes3 += Math.floor(Math.random() * 4);
+    if (dummyCounter % 5 == 0) {
+        promptCounter += 1;
+        if (promptCounter == 7) {
+            dummyReset();
+        }
+    }
+}
+
+function dummyReset() {
+    dummyOut = JSON.parse(JSON.stringify(dummyIn));
+    dummyCounter = 0;
+    promptCounter = 0;
 }
 
