@@ -129,7 +129,7 @@ function dummyGenerator() {
     dummyOut.performative[promptCounter].votes1 += Math.floor(Math.random() * 4);
     dummyOut.performative[promptCounter].votes2 += Math.floor(Math.random() * 4);
     dummyOut.performative[promptCounter].votes3 += Math.floor(Math.random() * 4);
-    if (dummyCounter % 5 == 0) {
+    if (dummyCounter % 50 == 0) {
         promptCounter += 1;
         if (promptCounter == 8) {
             dummyReset();
