@@ -139,7 +139,7 @@ function dummyGenerator() {
 
 function dummyReset() {
     dummyOut = JSON.parse(JSON.stringify(dummyIn));
-    dummyCounter = 0;
+    dummyCounter = 1;
     promptCounter = 0;
 }
 
