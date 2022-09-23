@@ -83,7 +83,7 @@ let dummyIn = {
 }
 
 var dummyOut = JSON.parse(JSON.stringify(dummyIn));
-var dummyCounter = 0;
+var dummyCounter = 1;
 var promptCounter = 0;
 
 app.get('/dummy', (req, res1) => {
